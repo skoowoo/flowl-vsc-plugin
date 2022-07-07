@@ -3,7 +3,7 @@
 	"name": "flowl",
 	"patterns": [
 		{
-			"include": "#multiline"
+			"include": "#string"
 		},
 		{
 			"include": "#load"
@@ -29,11 +29,10 @@
 		
 	],
 	"repository": {
-		"multiline": {
-			"patterns": [{
-				"name": "string.quoted.double.flowl",
-				"match": "\\*\\*\\*"
-			}]
+		"string": {
+			"begin": "\"",
+			"end": "\"",
+			"name": "string.quoted.double.flowl"
 		},
 		"load": {
 			"match": "^\\s*(load)\\s+(go:.*)\\s*$",
