@@ -3,50 +3,38 @@
 	"name": "flowl",
 	"patterns": [
 		{
-			"include": "#string"
-		},
-		{
-			"include": "#load"
-		},
-		{
-			"include": "#var"
-		},
-		{
-			"include": "#run1"
-		},
-		{
-			"include": "#run2"
-		},
-		{
 			"include": "#fn"
 		},
 		{
 			"include": "#comment"
 		},
 		{
+			"include": "#string"
+		},
+		{
 			"include": "#keywords"
+		},
+		{
+			"include": "#ident"
 		}
-		
 	],
 	"repository": {
 		"string": {
-			"begin": "\"",
-			"end": "\"",
-			"name": "string.quoted.double.flowl"
+			"patterns": [{
+				"name": "string.quoted.double.flowl",
+				"match": "(\".*(\\\"(.*)\\\")\"|\".*\")"
+			}]
 		},
-		"load": {
-			"match": "^\\s*(load)\\s+(go:.*)\\s*$",
+		"ident": {
+			"match": "[\\s=+-><]*(\\w+)[\\s=+-><]*",
 			"captures": {
 				"1": {
-					"name": "keyword.control.flowl"
-				},
-				"2": {
-					"name": "string.quoted.double.flowl"
+					"name": "storage.type.function.flowl"
 				}
 			}
 		},
 		"var": {
-			"match": "^\\s*(var)\\s+(\\w+).*$",
+			"match": "^\\s*(var)\\s+(\\w+)",
 			"captures": {
 				"1": {
 					"name": "keyword.control.flowl"
@@ -56,19 +44,8 @@
 				}
 			}
 		},
-		"run1": {
-			"match": "^\\s*(run)\\s+(\\w+)\\s*{.*",
-			"captures": {
-				"1": {
-					"name": "keyword.control.flowl"
-				},
-				"2": {
-					"name": "storage.type.function.flowl"
-				}
-			}
-		},
-		"run2": {
-			"match": "^\\s*(run)\\s+(\\w+)\\s*$",
+		"co": {
+			"match": "^\\s*(co)\\s+(\\w+)\\s*",
 			"captures": {
 				"1": {
 					"name": "keyword.control.flowl"
@@ -100,7 +77,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.flowl",
-				"match": "^\\s*(var|args|load|run|fn)\\b"
+				"match": "^\\s*(var|args|load|co|fn)\\b"
 			}]
 		}
 	},
