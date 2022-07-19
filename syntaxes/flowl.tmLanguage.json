@@ -12,6 +12,9 @@
 			"include": "#assignvar"
 		},
 		{
+			"include": "#refvar"
+		},
+		{
 			"include": "#co"
 		},
 		{
@@ -31,7 +34,13 @@
 		"string": {
 			"patterns": [{
 				"name": "string.quoted.double.flowl",
-				"match": "(\".*(\\\"(.*)\\\")\"|\".*\")"
+				"match": "\"([^\"\\\\]|\\\\.)*\""
+			}]
+		},
+		"refvar": {
+			"patterns": [{
+				"name": "variable.other.constant.flowl",
+				"match": "\\$\\(\\w+\\)"
 			}]
 		},
 		"ident": {
@@ -74,7 +83,7 @@
 					"name": "entity.name.function.flowl"
 				},
 				"3": {
-					"name": "entity.name.function.flowl"
+					"name": "entity.name.type.flowl"
 				}
 			}
 		},
@@ -94,7 +103,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.flowl",
-				"match": "^\\s*(for|var|args|load|co|fn)\\b"
+				"match": "^\\s*(for|var|load|co|fn)\\b"
 			}]
 		}
 	},
