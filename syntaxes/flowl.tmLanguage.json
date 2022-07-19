@@ -6,6 +6,15 @@
 			"include": "#fn"
 		},
 		{
+			"include": "#var"
+		},
+		{
+			"include": "#assignvar"
+		},
+		{
+			"include": "#co"
+		},
+		{
 			"include": "#comment"
 		},
 		{
@@ -40,7 +49,7 @@
 					"name": "keyword.control.flowl"
 				},
 				"2": {
-					"name": "storage.type.function.flowl"
+					"name": "entity.name.variable.flowl"
 				}
 			}
 		},
@@ -51,7 +60,7 @@
 					"name": "keyword.control.flowl"
 				},
 				"2": {
-					"name": "storage.type.function.flowl"
+					"name": "entity.name.function.flowl"
 				}
 			}
 		},
@@ -62,22 +71,30 @@
 					"name": "keyword.control.flowl"
 				},
 				"2": {
-					"name": "storage.type.function.flowl"
+					"name": "entity.name.function.flowl"
 				},
 				"3": {
 					"name": "entity.name.function.flowl"
 				}
 			}
 		},
+		"assignvar": {
+			"match": "\\s*(->)\\s+(\\w+)\\s*",
+			"captures": {
+				"2": {
+					"name": "entity.name.variable.flowl"
+				}
+			}
+		},
 		"comment": {
-			"begin": "//",
+			"begin": "\\s*//",
 			"end": "\\n",
 			"name": "comment.line.double-slash"
 		},
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.flowl",
-				"match": "^\\s*(var|args|load|co|fn)\\b"
+				"match": "^\\s*(for|var|args|load|co|fn)\\b"
 			}]
 		}
 	},
