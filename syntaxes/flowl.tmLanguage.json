@@ -9,6 +9,9 @@
 			"include": "#var"
 		},
 		{
+			"include": "#rewrite_var"
+		},
+		{
 			"include": "#assignvar"
 		},
 		{
@@ -44,10 +47,10 @@
 			}]
 		},
 		"ident": {
-			"match": "[\\s=+-><]*(\\w+)[\\s=+-><]*",
+			"match": "[\\s=+-><%\\(\\)]*([0-9]+)[\\s=+-><%\\(\\)]*",
 			"captures": {
 				"1": {
-					"name": "storage.type.function.flowl"
+					"name": ""
 				}
 			}
 		},
@@ -59,6 +62,17 @@
 				},
 				"2": {
 					"name": "entity.name.variable.flowl"
+				}
+			}
+		},
+		"rewrite_var": {
+			"match": "^\\s*(\\w+)\\s*(<-)",
+			"captures": {
+				"1": {
+					"name": "entity.name.variable.flowl"
+				},
+				"2": {
+					"name": ""
 				}
 			}
 		},
@@ -103,7 +117,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.flowl",
-				"match": "^\\s*(for|var|load|co|fn)\\b"
+				"match": "^\\s*(if|for|var|load|co|fn)\\b"
 			}]
 		}
 	},
