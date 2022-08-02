@@ -42,8 +42,8 @@
 		},
 		"refvar": {
 			"patterns": [{
-				"name": "variable.other.constant.flowl",
-				"match": "\\$\\(\\w+\\)"
+				"name": "entity.name.variable.flowl",
+				"match": "\\$\\([a-zA-Z0-9_\\.]+\\)"
 			}]
 		},
 		"ident": {
@@ -117,7 +117,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.flowl",
-				"match": "^\\s*(if|for|var|load|co|fn)\\b"
+				"match": "^\\s*(switch|case|if|for|var|load|co|fn)\\b"
 			}]
 		}
 	},
