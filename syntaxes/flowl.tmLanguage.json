@@ -117,7 +117,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.flowl",
-				"match": "^\\s*(switch|case|default|if|for|var|load|co|fn)\\b"
+				"match": "^\\s*(switch|case|default|if|for|var|load|co|fn|event)\\b"
 			}]
 		}
 	},
