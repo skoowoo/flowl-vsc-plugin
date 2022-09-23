@@ -31,7 +31,14 @@
 		},
 		{
 			"include": "#ident"
+		},
+		{
+			"include": "#directive"
+		},
+		{
+			"include": "#args"
 		}
+
 	],
 	"repository": {
 		"string": {
@@ -94,7 +101,7 @@
 					"name": "keyword.control.flowl"
 				},
 				"2": {
-					"name": "entity.name.function.flowl"
+					"name": "entity.name.type.flowl"
 				},
 				"3": {
 					"name": "entity.name.type.flowl"
@@ -119,6 +126,20 @@
 				"name": "keyword.control.flowl",
 				"match": "^\\s*(switch|case|default|if|for|var|load|co|fn|event)\\b"
 			}]
+		},
+		"directive": {
+			"patterns": [{
+				"name": "entity.name.function.macro.flowl",
+				"match": "^\\s*(exit|println|sleep|if_none_exit)\\b"
+			}]
+		},
+		"args": {
+			"match": "^\\s*(args)\\s*=",
+			"captures": {
+				"1": {
+					"name": "entity.name.variable.flowl"
+				}
+			}
 		}
 	},
 	"scopeName": "source.flowl"
