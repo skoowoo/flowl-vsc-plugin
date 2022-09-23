@@ -137,7 +137,7 @@
 			"match": "^\\s*(args)\\s*=",
 			"captures": {
 				"1": {
-					"name": "entity.name.variable.flowl"
+					"name": "storage.type.struct.flowl"
 				}
 			}
 		}
